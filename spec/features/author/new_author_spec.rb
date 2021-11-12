@@ -26,4 +26,9 @@ describe "New author page", type: :feature do
   
     expect(Author.count).to eq(old_count + 1)
   end
+
+  it "should check if an author has a last name" do
+    @author = Author.new(first_name: "Alan", last_name: "", homepage: "http://wikipedia.org/Alan_Turing")
+    expect(@author).to_not be_valid
+  end
 end
