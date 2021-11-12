@@ -21,6 +21,8 @@ describe "New author page", type: :feature do
     page.fill_in 'author[first_name]', with: 'Edsger'
     page.fill_in 'author[last_name]', with: 'Dijkstra'
     page.fill_in 'author[homepage]', with: 'https://de.wikipedia.org/wiki/Edsger_W._Dijkstra'
+
+    find('input[type="submit"]').click
   
     expect(Author.count).to eq(old_count + 1)
   end
